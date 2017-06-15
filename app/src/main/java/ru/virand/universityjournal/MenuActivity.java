@@ -12,6 +12,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
     Button btnMenuGroup;
     Button btnMenuTasks;
     Button btnMenuTeachers;
+    Button btnMenuDatabase;
 
 
 
@@ -25,11 +26,13 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         btnMenuGroup = (Button) findViewById(R.id.btnMenuGroup);
         btnMenuTasks = (Button) findViewById(R.id.btnMenuTasks);
         btnMenuTeachers = (Button) findViewById(R.id.btnMenuTeachers);
+        btnMenuDatabase = (Button) findViewById(R.id.btnMenuDatabase);
 
         btnMenuTimetable.setOnClickListener(this);
         btnMenuGroup.setOnClickListener(this);
         btnMenuTasks.setOnClickListener(this);
         btnMenuTeachers.setOnClickListener(this);
+        btnMenuDatabase.setOnClickListener(this);
     }
 
     @Override
@@ -47,6 +50,11 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnMenuTasks:
                 break;
             case R.id.btnMenuTeachers:
+                break;
+
+            case R.id.btnMenuDatabase:
+                intent = new Intent(this, DatabaseActivity.class);
+                startActivity(intent);
                 break;
         }
     }
