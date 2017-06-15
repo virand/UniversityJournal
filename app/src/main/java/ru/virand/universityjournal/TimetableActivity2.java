@@ -1,5 +1,6 @@
 package ru.virand.universityjournal;
 
+import android.content.Context;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -17,8 +18,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.TableLayout;
 import android.widget.TextView;
+
+import static java.security.AccessController.getContext;
 
 public class TimetableActivity2 extends AppCompatActivity {
 
@@ -38,9 +43,7 @@ public class TimetableActivity2 extends AppCompatActivity {
      */
     private ViewPager mViewPager;
 
-    protected void fillScrollView(ScrollView sv){
-        
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,17 +63,28 @@ public class TimetableActivity2 extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
-        tt1Sv = (ScrollView) findViewById(R.id.tt1Sv);
+
+
+
+//(((LinearLayout)((LinearLayout)mTabLayout.getChildAt(0)).getChildAt(wantedTabIndex)).getChildAt(1));
+
+    //    ViewPager vp = (ViewPager) findViewById(R.id.container);
+     //   LinearLayout ll = (LinearLayout) vp.getChildAt(0);
+
+        //fillScrollView(tt1Sv);
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+
+
+               // Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+               //         .setAction("Action", null).show();
             }
         });
+
 
     }
 
@@ -97,6 +111,8 @@ public class TimetableActivity2 extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
+
     /**
      * A placeholder fragment containing a simple view.
      */
@@ -106,6 +122,13 @@ public class TimetableActivity2 extends AppCompatActivity {
          * fragment.
          */
         private static final String ARG_SECTION_NUMBER = "section_number";
+
+        public static void fillScrollView(ScrollView sv){
+
+
+
+
+        }
 
         public PlaceholderFragment() {
         }
@@ -134,7 +157,88 @@ public class TimetableActivity2 extends AppCompatActivity {
 
             switch(getArguments().getInt(ARG_SECTION_NUMBER)){
                 case 1:
+
+                            /*
+                <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Понедельник"
+                android:textSize="20dp"
+                android:background="#3AF"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="8:20\n9:50"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text="Методология программной инженерии"/>
+
+            </LinearLayout>
+         */
+
                     rootView = inflater.inflate(R.layout.tt_1, container, false);
+                    ScrollView sv = (ScrollView) rootView.findViewById(R.id.tt1Sv);
+                    String[] daysOfTheWeek = new String[]{"Понедельник","Вторник","Среда","Четверг","Пятница","Суббота"};
+                    String[] lessonTime = new String[]{"8:20\n9:50","10:00\n11:30","11:40\n13:10","13:30\n15:00","15:20\n16:50","17:00\n18:30"};
+
+
+                    LinearLayout mainLL = new LinearLayout(getContext());
+
+                    LinearLayout.LayoutParams mainLLParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+
+                    mainLL.setLayoutParams(mainLLParams);
+                    mainLLParams.height=LinearLayout.LayoutParams.WRAP_CONTENT;
+                    mainLLParams.width=LinearLayout.LayoutParams.MATCH_PARENT;
+                    mainLL.setOrientation(LinearLayout.VERTICAL);
+                    sv.addView(mainLL);
+
+                    ViewGroup.LayoutParams tvDayOfTheWeekParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
+
+                    for(String d: daysOfTheWeek)
+                    {
+                        TextView tvDayOfTheWeek = new TextView(getContext());
+                        tvDayOfTheWeek.setLayoutParams(tvDayOfTheWeekParams);
+                        tvDayOfTheWeek.setText(d);
+                        mainLL.addView(tvDayOfTheWeek);
+
+
+                        for (String l : lessonTime)
+                        {
+                            LinearLayout llLesson = new LinearLayout(getContext());
+                            llLesson.setLayoutParams(mainLLParams);
+                            TextView tvTime = new TextView(getContext());
+                            tvTime.setLayoutParams(new TableLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 4f));
+                            tvTime.setText(l);
+                            TextView tvLessonName = new TextView(getContext());
+                            tvLessonName.setLayoutParams(new TableLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f));
+                            tvLessonName.setText("Методология программной инженерии\nКлименков Сергей Викторович\nКронверкский пр., д. 49 лит. А 324");
+                            llLesson.addView(tvTime);
+                            llLesson.addView(tvLessonName);
+                            mainLL.addView(llLesson);
+                        }
+
+
+                        //ViewGroup.LayoutParams tvTimeParams= new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
+
+                    }
                     break;
                 case 2:
                     rootView = inflater.inflate(R.layout.tt_2, container, false);
