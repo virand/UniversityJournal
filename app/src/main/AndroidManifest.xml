@@ -23,7 +23,11 @@
             android:name=".TimetableActivity2"
             android:label="@string/title_activity_timetable2"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".DatabaseActivity"></activity>
+        <activity android:name=".DatabaseActivity" />
+        <activity android:name=".GroupActivity" />
+        <activity android:name=".StudentActivity" />
+        <activity android:name=".TeacherActivity" />
+        <activity android:name=".TaskActivity"></activity>
     </application>
 
 </manifest>

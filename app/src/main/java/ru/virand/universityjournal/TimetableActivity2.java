@@ -1,6 +1,7 @@
 package ru.virand.universityjournal;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,12 +13,14 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TableLayout;
@@ -74,16 +77,16 @@ public class TimetableActivity2 extends AppCompatActivity {
         //fillScrollView(tt1Sv);
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+      //  FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+      //  fab.setOnClickListener(new View.OnClickListener() {
+      //      @Override
+      //      public void onClick(View view) {
 
 
                // Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                //         .setAction("Action", null).show();
-            }
-        });
+       //     }
+       // });
 
 
     }
@@ -216,6 +219,7 @@ public class TimetableActivity2 extends AppCompatActivity {
                         TextView tvDayOfTheWeek = new TextView(getContext());
                         tvDayOfTheWeek.setLayoutParams(tvDayOfTheWeekParams);
                         tvDayOfTheWeek.setText(d);
+                        tvDayOfTheWeek.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
                         mainLL.addView(tvDayOfTheWeek);
 
 
@@ -232,6 +236,13 @@ public class TimetableActivity2 extends AppCompatActivity {
                             llLesson.addView(tvTime);
                             llLesson.addView(tvLessonName);
                             mainLL.addView(llLesson);
+                            View line = new View(getContext());
+                            line.setLayoutParams(new LinearLayout.LayoutParams(
+                                    LinearLayout.LayoutParams.MATCH_PARENT,
+                                    5
+                            ));
+                            line.setBackgroundColor(Color.parseColor("#B3B3B3"));
+                            mainLL.addView(line);
                         }
 
 
@@ -239,9 +250,85 @@ public class TimetableActivity2 extends AppCompatActivity {
 
 
                     }
+
+                    /*
+                    ViewGroup.LayoutParams lParamsButtons = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                    Button btnChangeTT = new Button(getContext());
+                    btnChangeTT.setLayoutParams(lParamsButtons);
+                    btnChangeTT.setText("Изменить расписание");
+                   // btnChangeTT.setId(4);
+
+                    TextView tvTest = new TextView(getContext());
+                    tvTest.setLayoutParams(tvDayOfTheWeekParams);
+                    tvTest.setText("TEST");
+                    mainLL.addView(tvTest);
+
+                    Button btnClearTT = new Button(getContext());
+                    btnClearTT.setLayoutParams(lParamsButtons);
+                    btnClearTT.setText("Очистить расписание");
+
+                    mainLL.addView(btnChangeTT);
+                    mainLL.addView(btnClearTT);
+                    */
+
                     break;
                 case 2:
                     rootView = inflater.inflate(R.layout.tt_2, container, false);
+
+                    sv = (ScrollView) rootView.findViewById(R.id.tt2Sv);
+                    daysOfTheWeek = new String[]{"Понедельник","Вторник","Среда","Четверг","Пятница","Суббота"};
+                    lessonTime = new String[]{"8:20\n9:50","10:00\n11:30","11:40\n13:10","13:30\n15:00","15:20\n16:50","17:00\n18:30"};
+
+
+                    mainLL = new LinearLayout(getContext());
+
+                     mainLLParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+
+                    mainLL.setLayoutParams(mainLLParams);
+                    mainLLParams.height=LinearLayout.LayoutParams.WRAP_CONTENT;
+                    mainLLParams.width=LinearLayout.LayoutParams.MATCH_PARENT;
+                    mainLL.setOrientation(LinearLayout.VERTICAL);
+                    sv.addView(mainLL);
+
+                    tvDayOfTheWeekParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
+
+                    for(String d: daysOfTheWeek)
+                    {
+                        TextView tvDayOfTheWeek = new TextView(getContext());
+                        tvDayOfTheWeek.setLayoutParams(tvDayOfTheWeekParams);
+                        tvDayOfTheWeek.setText(d);
+                        tvDayOfTheWeek.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                        mainLL.addView(tvDayOfTheWeek);
+
+
+                        for (String l : lessonTime)
+                        {
+                            LinearLayout llLesson = new LinearLayout(getContext());
+                            llLesson.setLayoutParams(mainLLParams);
+                            TextView tvTime = new TextView(getContext());
+                            tvTime.setLayoutParams(new TableLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 4f));
+                            tvTime.setText(l);
+                            TextView tvLessonName = new TextView(getContext());
+                            tvLessonName.setLayoutParams(new TableLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f));
+                            tvLessonName.setText("Методология программной инженерии\nКлименков Сергей Викторович\nКронверкский пр., д. 49 лит. А 324");
+                            llLesson.addView(tvTime);
+                            llLesson.addView(tvLessonName);
+                            mainLL.addView(llLesson);
+                            View line = new View(getContext());
+                            line.setLayoutParams(new LinearLayout.LayoutParams(
+                                    LinearLayout.LayoutParams.MATCH_PARENT,
+                                    5
+                            ));
+                            line.setBackgroundColor(Color.parseColor("#B3B3B3"));
+                            mainLL.addView(line);
+                        }
+
+
+                        //ViewGroup.LayoutParams tvTimeParams= new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
+
+                    }
                     break;
             }
 

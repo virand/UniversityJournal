@@ -68,6 +68,7 @@ public class DatabaseActivity extends AppCompatActivity implements View.OnClickL
         switch(v.getId()){
             case R.id.btnDatabaseAdd:
                 // Подготовим данные для вставки в виде пар: наименование столбца - значение
+                //cv.put("id",0);
                 cv.put("fullName",fullname);
                 cv.put("birthday",birthday);
                 cv.put("address",address);
@@ -84,7 +85,8 @@ public class DatabaseActivity extends AppCompatActivity implements View.OnClickL
             case R.id.btnDatabaseRead:
                 Log.d("SQLITE: ", "ROWS IN TABLE");
                 // Делаем запрос всех данных из таблицы students, получаем Cursor
-                Cursor c = db.query("students",null,null,null,null, null, null);
+                //Cursor c = db.query("students",null,null,null,null, null, null);
+                Cursor c = db.rawQuery("SELECT * FROM students", null);
 
                 // Ставим позицию курсора на первую строку выборки
                 // Если в выборке нет строк, вернется false
@@ -98,6 +100,7 @@ public class DatabaseActivity extends AppCompatActivity implements View.OnClickL
                     int olympsColIndex = c.getColumnIndex("olymps");
                     int sportsColIndex = c.getColumnIndex("sports");
                     int notesColIndex = c.getColumnIndex("notes");
+                    int emailColIndex = c.getColumnIndex("email");
 
                     do {
                         // Получаем значения по номерам столбцов и пишем в лог
@@ -107,6 +110,8 @@ public class DatabaseActivity extends AppCompatActivity implements View.OnClickL
                                         ", fullName = " + c.getString(fullNameColIndex) +
                                         ", birthday = " + c.getString(birthdayColIndex) +
                                         ", address = " + c.getString(addressColIndex) +
+                                        ", tel = " + c.getString(telColIndex) +
+                                        ", email = " + c.getString(emailColIndex) +
                                         ", olymps = " + c.getString(olympsColIndex) +
                                         ", sports = " + c.getString(sportsColIndex) +
                                         ", notes = " + c.getString(notesColIndex));
@@ -119,10 +124,12 @@ public class DatabaseActivity extends AppCompatActivity implements View.OnClickL
                 }
                 break;
             case R.id.btnDatabaseClear:
-                Log.d("SQLITE", "--- Clear mytable: ---");
+               // Log.d("SQLITE", "--- Clear mytable: ---");
                 // Удаляем все записи
-                int clearCount = db.delete("students", null, null);
-                Log.d("SQLITE", "deleted rows count = " + clearCount);
+             //   int clearCount = db.delete("students", null, null);
+             //  Log.d("SQLITE", "deleted rows count = " + clearCount);
+                db.execSQL("DROP TABLE IF EXISTS students");
+                db.execSQL("CREATE TABLE IF NOT EXISTS students(id integer primary key autoincrement, fullName VARCHAR(255), birthday DATE, address VARCHAR(255), tel VARCHAR(255), email VARCHAR(255), olymps VARCHAR(255), sports VARCHAR(255), notes VARCHAR(255));");
                 break;
         }
     }
@@ -138,7 +145,7 @@ public class DatabaseActivity extends AppCompatActivity implements View.OnClickL
         {
             Log.d("SQLITE: ", "onCreate database");
             // Создаем таблицу с полями
-            db.execSQL("CREATE TABLE IF NOT EXISTS students(id INT(10) PRIMARY KEY, fullName VARCHAR(255), birthday DATE, address VARCHAR(255), tel VARCHAR(255), email VARCHAR(255), olymps VARCHAR(255), sports VARCHAR(255), notes VARCHAR(255));");
+            db.execSQL("CREATE TABLE students(id integer primary key autoincrement, fullName VARCHAR(255), birthday DATE, address VARCHAR(255), tel VARCHAR(255), email VARCHAR(255), olymps VARCHAR(255), sports VARCHAR(255), notes VARCHAR(255));");
         }
 
         @Override

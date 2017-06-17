@@ -45,13 +45,17 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             case R.id.btnMenuGroup:
-
+                intent = new Intent(this, GroupActivity.class);
+                startActivity(intent);
                 break;
             case R.id.btnMenuTasks:
+                intent = new Intent(this, TaskActivity.class);
+                startActivity(intent);
                 break;
             case R.id.btnMenuTeachers:
+                intent = new Intent(this, TeacherActivity.class);
+                startActivity(intent);
                 break;
-
             case R.id.btnMenuDatabase:
                 intent = new Intent(this, DatabaseActivity.class);
                 startActivity(intent);

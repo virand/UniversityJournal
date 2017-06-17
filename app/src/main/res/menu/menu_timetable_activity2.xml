@@ -3,8 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="ru.virand.universityjournal.TimetableActivity2">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_settings_change_timetable"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="Изменить расписание"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_settings_clear_timetable"
+        android:orderInCategory="100"
+        android:title="Очистить расписаниие"
         app:showAsAction="never" />
 </menu>

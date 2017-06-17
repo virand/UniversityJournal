@@ -2,10 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <TextView
+    <ScrollView
+        android:id="@+id/tt2Sv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="чет"/>
+        android:layout_height="match_parent">
+
+
+
+
+    </ScrollView>
 
 </LinearLayout>
