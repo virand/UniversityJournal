@@ -54,8 +54,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Тюмень, Ленинский проспект"
-        app:layout_constraintLeft_toRightOf="@+id/textView6"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/etStudentBirthday"
         app:layout_constraintTop_toBottomOf="@+id/etStudentBirthday" />
 
     <TextView
@@ -63,8 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Адрес"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/etStudentAddress"
+        app:layout_constraintLeft_toLeftOf="@+id/textView5"
         app:layout_constraintBaseline_toBaselineOf="@+id/etStudentAddress" />
 
     <TextView
@@ -73,8 +71,7 @@
         android:layout_height="wrap_content"
         android:text="Телефон"
         app:layout_constraintBaseline_toBaselineOf="@+id/etStudentTel"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/etStudentTel" />
+        app:layout_constraintLeft_toLeftOf="@+id/textView6" />
 
     <EditText
         android:id="@+id/etStudentTel"
@@ -84,8 +81,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="+7 954 586 78 58"
-        app:layout_constraintLeft_toRightOf="@+id/textView7"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/etStudentAddress"
         app:layout_constraintTop_toBottomOf="@+id/etStudentAddress" />
 
     <TextView
@@ -94,19 +90,16 @@
         android:layout_height="wrap_content"
         android:text="Почта"
         app:layout_constraintBaseline_toBaselineOf="@+id/etStudentEmail"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/etStudentEmail" />
+        app:layout_constraintLeft_toLeftOf="@+id/textView7" />
 
     <EditText
         android:id="@+id/etStudentEmail"
         android:layout_width="258dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="0dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="ivan@yandex.ru"
-        app:layout_constraintLeft_toRightOf="@+id/textView8"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/etStudentTel"
         app:layout_constraintTop_toBottomOf="@+id/etStudentTel" />
 
             <TextView
@@ -119,7 +112,9 @@
                 android:text="Олимпиады"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etStudentEmail" />
+                app:layout_constraintTop_toBottomOf="@+id/etStudentEmail"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp" />
 
             <EditText
                 android:id="@+id/etStudentOlymps"
@@ -134,7 +129,9 @@
                 android:text="Олимпиада Всерос матем"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView9" />
+                app:layout_constraintTop_toBottomOf="@+id/textView9"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp" />
 
             <TextView
                 android:id="@+id/textView10"
@@ -146,7 +143,9 @@
                 android:text="Спортивные мероприятия"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etStudentOlymps" />
+                app:layout_constraintTop_toBottomOf="@+id/etStudentOlymps"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp" />
 
             <EditText
                 android:id="@+id/etStudentSports"
@@ -161,7 +160,9 @@
                 android:text="Универсиада Тюмень"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView10" />
+                app:layout_constraintTop_toBottomOf="@+id/textView10"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp" />
 
             <TextView
                 android:id="@+id/textView11"
@@ -173,7 +174,9 @@
                 android:text="Личные заметки"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etStudentSports" />
+                app:layout_constraintTop_toBottomOf="@+id/etStudentSports"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp" />
 
             <EditText
                 android:id="@+id/etStudentNotes"
@@ -188,7 +191,9 @@
                 android:text="Отдать документы"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView11" />
+                app:layout_constraintTop_toBottomOf="@+id/textView11"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp" />
 
             <Button
                 android:id="@+id/btnStudentChange"
@@ -200,7 +205,9 @@
                 android:text="Изменить запись"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etStudentNotes" />
+                app:layout_constraintTop_toBottomOf="@+id/etStudentNotes"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp" />
 
             <Button
                 android:id="@+id/btnStudentRemove"
@@ -213,7 +220,18 @@
                 app:layout_constraintRight_toRightOf="parent"
                 android:layout_marginLeft="32dp"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintHorizontal_bias="0.0" />
+                app:layout_constraintHorizontal_bias="0.0"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp" />
+
+            <android.support.constraint.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/guideline"
+                app:layout_constraintGuide_begin="20dp"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteY="89dp"
+                tools:layout_editor_absoluteX="20dp" />
 
         </android.support.constraint.ConstraintLayout>
 

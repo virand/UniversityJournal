@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -54,6 +55,7 @@ public class GroupActivity extends AppCompatActivity implements View.OnClickList
      */
 
     LinearLayout llGroupStudents;
+    Button btnAddClassmate;
 
     DBHelper dbHelper;
 
@@ -62,6 +64,8 @@ public class GroupActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_group);
         llGroupStudents = (LinearLayout) findViewById(R.id.llGroupStudents);
+        btnAddClassmate = (Button) findViewById(R.id.btnAddClassmate);
+        btnAddClassmate.setOnClickListener(this);
 
         dbHelper = new DBHelper(this);
 
@@ -133,20 +137,37 @@ public class GroupActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         Intent intent;
+        switch (v.getId()){
+            case R.id.btnAddClassmate:
+                intent = new Intent(this, DatabaseActivity.class);
+                startActivity(intent);
+                break;
+            default:
+                intent = new Intent(this, StudentActivity.class);
+                Log.d("View v id: ", String.valueOf(v.getId()));
 
-        intent = new Intent(this, StudentActivity.class);
-        Log.d("View v id: ", String.valueOf(v.getId()));
+                TextView tv = (TextView) findViewById(v.getId());
+                String tvText = tv.getText().toString();
+                Log.d("textVew value: ", tvText);
 
-        TextView tv = (TextView) findViewById(v.getId());
-        String tvText = tv.getText().toString();
-        Log.d("textVew value: ", tvText);
+                String arr[] = tvText.split(" ", 2);
+                String tvId = arr[0];
+                Log.d("tvId value: ", tvId);
+                intent.putExtra("id",tvId);
 
-        String arr[] = tvText.split(" ", 2);
-        String tvId = arr[0];
-        Log.d("tvId value: ", tvId);
-        intent.putExtra("id",tvId);
+                startActivity(intent);
+                break;
 
-        startActivity(intent);
+        }
+
+    }
+
+    @Override
+    public void onRestart()
+    {
+        super.onRestart();
+        finish();
+        startActivity(getIntent());
     }
 
 

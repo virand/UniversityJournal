@@ -26,13 +26,13 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         btnMenuGroup = (Button) findViewById(R.id.btnMenuGroup);
         btnMenuTasks = (Button) findViewById(R.id.btnMenuTasks);
         btnMenuTeachers = (Button) findViewById(R.id.btnMenuTeachers);
-        btnMenuDatabase = (Button) findViewById(R.id.btnMenuDatabase);
+      //  btnMenuDatabase = (Button) findViewById(R.id.btnMenuDatabase);
 
         btnMenuTimetable.setOnClickListener(this);
         btnMenuGroup.setOnClickListener(this);
         btnMenuTasks.setOnClickListener(this);
         btnMenuTeachers.setOnClickListener(this);
-        btnMenuDatabase.setOnClickListener(this);
+       // btnMenuDatabase.setOnClickListener(this);
     }
 
     @Override
@@ -56,10 +56,12 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                 intent = new Intent(this, TeacherActivity.class);
                 startActivity(intent);
                 break;
+            /*
             case R.id.btnMenuDatabase:
                 intent = new Intent(this, DatabaseActivity.class);
                 startActivity(intent);
                 break;
+                */
         }
     }
 }

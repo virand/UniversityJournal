@@ -29,10 +29,10 @@ public class DatabaseActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_database);
 
         btnDatabaseAdd = (Button) findViewById(R.id.btnDatabaseAdd);
-        btnDatabaseRead = (Button) findViewById(R.id.btnDatabaseRead);
+        //btnDatabaseRead = (Button) findViewById(R.id.btnDatabaseRead);
         btnDatabaseClear = (Button) findViewById(R.id.btnDatabaseClear);
         btnDatabaseAdd.setOnClickListener(this);
-        btnDatabaseRead.setOnClickListener(this);
+       // btnDatabaseRead.setOnClickListener(this);
         btnDatabaseClear.setOnClickListener(this);
 
         etDatabaseFullname = (EditText) findViewById(R.id.etDatabaseFullname);
@@ -82,6 +82,7 @@ public class DatabaseActivity extends AppCompatActivity implements View.OnClickL
                 long rowID = db.insert("students", null, cv);
                 Log.d("SQLITE: ", "row inserted, ID = " + rowID);
                 break;
+            /*
             case R.id.btnDatabaseRead:
                 Log.d("SQLITE: ", "ROWS IN TABLE");
                 // Делаем запрос всех данных из таблицы students, получаем Cursor
@@ -123,6 +124,7 @@ public class DatabaseActivity extends AppCompatActivity implements View.OnClickL
                     c.close();
                 }
                 break;
+                */
             case R.id.btnDatabaseClear:
                // Log.d("SQLITE", "--- Clear mytable: ---");
                 // Удаляем все записи
