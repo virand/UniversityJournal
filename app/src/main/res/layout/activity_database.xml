@@ -8,129 +8,85 @@
 
     <EditText
         android:id="@+id/etDatabaseFullname"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Иванов Иван Иванович"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/textView19"
-        android:layout_marginRight="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/etDatabaseBirthday"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="date"
         android:text="03.09.1995"
-        app:layout_constraintTop_toBottomOf="@+id/etDatabaseFullname"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="8dp"
-        app:layout_constraintLeft_toRightOf="@+id/textView20"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
+        app:layout_constraintRight_toRightOf="@+id/etDatabaseFullname"
+        app:layout_constraintTop_toBottomOf="@+id/etDatabaseFullname" />
 
     <EditText
         android:id="@+id/etDatabaseAddress"
-        android:layout_width="355dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Тюмень, Ленинский проспект д. 3/2"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etDatabaseBirthday"
-        app:layout_constraintLeft_toRightOf="@+id/textView21"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
+        app:layout_constraintRight_toRightOf="@+id/etDatabaseBirthday"
+        app:layout_constraintTop_toBottomOf="@+id/etDatabaseBirthday" />
 
     <EditText
         android:id="@+id/etDatabaseTel"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="+7 984 867 23 54"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etDatabaseAddress"
-        app:layout_constraintLeft_toRightOf="@+id/textView22"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
+        app:layout_constraintRight_toRightOf="@+id/etDatabaseAddress"
+        app:layout_constraintTop_toBottomOf="@+id/etDatabaseAddress" />
 
     <EditText
         android:id="@+id/etDatabaseEmail"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="ivan@yandex.ru"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etDatabaseTel"
-        app:layout_constraintLeft_toRightOf="@+id/textView23"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
+        app:layout_constraintRight_toRightOf="@+id/etDatabaseTel"
+        app:layout_constraintTop_toBottomOf="@+id/etDatabaseTel" />
 
     <EditText
         android:id="@+id/etDatabaseOlymps"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Олимпиада по выч. технике\nВсерос. матем"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etDatabaseEmail"
-        app:layout_constraintLeft_toRightOf="@+id/textView24"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
+        app:layout_constraintRight_toRightOf="@+id/etDatabaseEmail"
+        app:layout_constraintTop_toBottomOf="@+id/etDatabaseEmail" />
 
     <EditText
         android:id="@+id/etDatabaseSport"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Баскетбол 3 место\nУчастие в Универсиаде"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etDatabaseOlymps"
-        app:layout_constraintLeft_toRightOf="@+id/textView25"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
+        app:layout_constraintRight_toRightOf="@+id/etDatabaseOlymps"
+        app:layout_constraintTop_toBottomOf="@+id/etDatabaseOlymps" />
 
     <EditText
         android:id="@+id/etDatabaseNotes"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Отдать копию паспорта"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etDatabaseSport"
-        app:layout_constraintLeft_toRightOf="@+id/textView26"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp" />
+        app:layout_constraintRight_toRightOf="@+id/etDatabaseSport"
+        app:layout_constraintTop_toBottomOf="@+id/etDatabaseSport" />
 
     <Button
         android:id="@+id/btnDatabaseAdd"
@@ -167,23 +123,17 @@
         android:layout_height="wrap_content"
         android:text="ФИО"
         app:layout_constraintBaseline_toBaselineOf="@+id/etDatabaseFullname"
-        app:layout_constraintRight_toLeftOf="@+id/etDatabaseFullname"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
+        app:layout_constraintRight_toLeftOf="@+id/etDatabaseFullname" />
 
     <TextView
         android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Дата рождения"
-        app:layout_constraintBaseline_toBaselineOf="@+id/etDatabaseBirthday"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/etDatabaseBirthday"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp" />
+        tools:layout_editor_absoluteY="65dp"
+        app:layout_constraintRight_toLeftOf="@+id/etDatabaseBirthday" />
 
     <TextView
         android:id="@+id/textView21"

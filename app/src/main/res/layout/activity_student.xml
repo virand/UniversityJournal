@@ -23,7 +23,8 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
+        android:layout_marginEnd="8dp"
+        app:layout_constraintHorizontal_bias="0.506" />
 
     <TextView
         android:id="@+id/textView5"
@@ -34,28 +35,29 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/etStudentBirthday" />
 
-    <EditText
-        android:id="@+id/etStudentBirthday"
-        android:layout_width="239dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="03.08.1995"
-        app:layout_constraintLeft_toRightOf="@+id/textView5"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvStudentFullName" />
+            <EditText
+                android:id="@+id/etStudentBirthday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="03.08.1995"
+                app:layout_constraintLeft_toRightOf="@+id/textView5"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvStudentFullName" />
 
-    <EditText
-        android:id="@+id/etStudentAddress"
-        android:layout_width="258dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Тюмень, Ленинский проспект"
-        app:layout_constraintRight_toRightOf="@+id/etStudentBirthday"
-        app:layout_constraintTop_toBottomOf="@+id/etStudentBirthday" />
+            <EditText
+                android:id="@+id/etStudentAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Тюмень, Ленинский проспект"
+                app:layout_constraintRight_toRightOf="@+id/etStudentBirthday"
+                app:layout_constraintTop_toBottomOf="@+id/etStudentBirthday"
+                android:layout_marginRight="0dp" />
 
     <TextView
         android:id="@+id/textView6"
@@ -73,16 +75,17 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/etStudentTel"
         app:layout_constraintLeft_toLeftOf="@+id/textView6" />
 
-    <EditText
-        android:id="@+id/etStudentTel"
-        android:layout_width="258dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="+7 954 586 78 58"
-        app:layout_constraintRight_toRightOf="@+id/etStudentAddress"
-        app:layout_constraintTop_toBottomOf="@+id/etStudentAddress" />
+            <EditText
+                android:id="@+id/etStudentTel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="+7 954 586 78 58"
+                app:layout_constraintRight_toRightOf="@+id/etStudentAddress"
+                app:layout_constraintTop_toBottomOf="@+id/etStudentAddress"
+                android:layout_marginRight="0dp" />
 
     <TextView
         android:id="@+id/textView8"
@@ -92,15 +95,17 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/etStudentEmail"
         app:layout_constraintLeft_toLeftOf="@+id/textView7" />
 
-    <EditText
-        android:id="@+id/etStudentEmail"
-        android:layout_width="258dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="ivan@yandex.ru"
-        app:layout_constraintRight_toRightOf="@+id/etStudentTel"
-        app:layout_constraintTop_toBottomOf="@+id/etStudentTel" />
+            <EditText
+                android:id="@+id/etStudentEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="ivan@yandex.ru"
+                app:layout_constraintRight_toRightOf="@+id/etStudentTel"
+                app:layout_constraintTop_toBottomOf="@+id/etStudentTel"
+                android:layout_marginRight="0dp" />
 
             <TextView
                 android:id="@+id/textView9"
@@ -230,7 +235,7 @@
                 android:id="@+id/guideline"
                 app:layout_constraintGuide_begin="20dp"
                 android:orientation="vertical"
-                tools:layout_editor_absoluteY="89dp"
+                tools:layout_editor_absoluteY="81dp"
                 tools:layout_editor_absoluteX="20dp" />
 
         </android.support.constraint.ConstraintLayout>
