@@ -27,8 +27,7 @@
         android:text="03.09.1995"
         app:layout_constraintRight_toRightOf="@+id/etDatabaseFullname"
         app:layout_constraintTop_toBottomOf="@+id/etDatabaseFullname"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="-128dp" />
+        android:layout_marginTop="8dp" />
 
     <EditText
         android:id="@+id/etDatabaseAddress"
@@ -39,8 +38,7 @@
         android:text="Тюмень, Ленинский проспект д. 3/2"
         app:layout_constraintRight_toRightOf="@+id/etDatabaseBirthday"
         app:layout_constraintTop_toBottomOf="@+id/etDatabaseBirthday"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="-108dp" />
+        android:layout_marginTop="8dp" />
 
     <EditText
         android:id="@+id/etDatabaseTel"
@@ -51,8 +49,7 @@
         android:text="+7 984 867 23 54"
         app:layout_constraintRight_toRightOf="@+id/etDatabaseAddress"
         app:layout_constraintTop_toBottomOf="@+id/etDatabaseAddress"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="-114dp" />
+        android:layout_marginTop="8dp" />
 
     <EditText
         android:id="@+id/etDatabaseEmail"
@@ -63,8 +60,7 @@
         android:text="ivan@yandex.ru"
         app:layout_constraintRight_toRightOf="@+id/etDatabaseTel"
         app:layout_constraintTop_toBottomOf="@+id/etDatabaseTel"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="-108dp" />
+        android:layout_marginTop="8dp" />
 
     <EditText
         android:id="@+id/etDatabaseOlymps"
@@ -75,8 +71,7 @@
         android:text="Олимпиада по выч. технике\nВсерос. матем"
         app:layout_constraintRight_toRightOf="@+id/etDatabaseEmail"
         app:layout_constraintTop_toBottomOf="@+id/etDatabaseEmail"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="-121dp" />
+        android:layout_marginTop="8dp" />
 
     <EditText
         android:id="@+id/etDatabaseSport"
@@ -87,8 +82,7 @@
         android:text="Баскетбол 3 место\nУчастие в Универсиаде"
         app:layout_constraintRight_toRightOf="@+id/etDatabaseOlymps"
         app:layout_constraintTop_toBottomOf="@+id/etDatabaseOlymps"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="-108dp" />
+        android:layout_marginTop="8dp" />
 
     <EditText
         android:id="@+id/etDatabaseNotes"
@@ -99,8 +93,7 @@
         android:text="Отдать копию паспорта"
         app:layout_constraintRight_toRightOf="@+id/etDatabaseSport"
         app:layout_constraintTop_toBottomOf="@+id/etDatabaseSport"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="-113dp" />
+        android:layout_marginTop="8dp" />
 
     <Button
         android:id="@+id/btnDatabaseAdd"
@@ -138,16 +131,16 @@
         android:text="ФИО"
         app:layout_constraintBaseline_toBaselineOf="@+id/etDatabaseFullname"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/etDatabaseFullname" />
+        app:layout_constraintRight_toLeftOf="@+id/etDatabaseFullname"
+        android:layout_marginRight="32dp" />
 
     <TextView
         android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Дата рождения"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/etDatabaseBirthday"
-        app:layout_constraintBaseline_toBaselineOf="@+id/etDatabaseBirthday" />
+        android:text="Дата\nрождения"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etDatabaseBirthday"
+        app:layout_constraintLeft_toLeftOf="@+id/textView19" />
 
     <TextView
         android:id="@+id/textView21"
@@ -155,8 +148,7 @@
         android:layout_height="wrap_content"
         android:text="Адрес"
         app:layout_constraintBaseline_toBaselineOf="@+id/etDatabaseAddress"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/etDatabaseAddress" />
+        app:layout_constraintLeft_toLeftOf="@+id/textView20" />
 
     <TextView
         android:id="@+id/textView22"
@@ -164,8 +156,7 @@
         android:layout_height="wrap_content"
         android:text="Телефон"
         app:layout_constraintBaseline_toBaselineOf="@+id/etDatabaseTel"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/etDatabaseTel" />
+        app:layout_constraintLeft_toLeftOf="@+id/textView21" />
 
     <TextView
         android:id="@+id/textView23"
@@ -173,8 +164,7 @@
         android:layout_height="wrap_content"
         android:text="Почта"
         app:layout_constraintBaseline_toBaselineOf="@+id/etDatabaseEmail"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/etDatabaseEmail" />
+        app:layout_constraintLeft_toLeftOf="@+id/textView22" />
 
     <TextView
         android:id="@+id/textView24"
@@ -182,8 +172,7 @@
         android:layout_height="wrap_content"
         android:text="Олимпиады"
         app:layout_constraintBaseline_toBaselineOf="@+id/etDatabaseOlymps"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/etDatabaseOlymps" />
+        app:layout_constraintLeft_toLeftOf="@+id/textView23" />
 
     <TextView
         android:id="@+id/textView25"
@@ -191,8 +180,7 @@
         android:layout_height="wrap_content"
         android:text="Спорт"
         app:layout_constraintBaseline_toBaselineOf="@+id/etDatabaseSport"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/etDatabaseSport" />
+        app:layout_constraintLeft_toLeftOf="@+id/textView24" />
 
     <TextView
         android:id="@+id/textView26"
@@ -200,6 +188,5 @@
         android:layout_height="wrap_content"
         android:text="Заметки"
         app:layout_constraintBaseline_toBaselineOf="@+id/etDatabaseNotes"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/etDatabaseNotes" />
+        app:layout_constraintLeft_toLeftOf="@+id/textView25" />
 </android.support.constraint.ConstraintLayout>
